@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:menu_makanan/providers/auth.dart';
+import 'package:menu_makanan/providers/brandhome.dart';
 import 'package:menu_makanan/providers/makanan/all_products.dart';
 import 'package:menu_makanan/providers/cart.dart';
 import 'package:menu_makanan/providers/minuman/daftar_minuman.dart';
@@ -12,7 +13,6 @@ import 'package:menu_makanan/screens/minuman_screen/minuman_overview_screen.dart
 import 'package:provider/provider.dart';
 
 import 'screens/makanan_screen/makanan_detail_screen.dart';
-import 'screens/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,6 +31,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => DaftarMinumans(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ShoeProvider(),
         ),
         ChangeNotifierProxyProvider<Authen, Cart>(
           create: (context) => Cart(),

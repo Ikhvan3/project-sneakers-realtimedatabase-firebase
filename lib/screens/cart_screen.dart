@@ -29,8 +29,6 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     final cardData = Provider.of<Cart>(context);
-    final daftarMakanans = Provider.of<DaftarMakanans>(context);
-    final daftarMinumans = Provider.of<DaftarMinumans>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -98,6 +96,7 @@ class _CartScreenState extends State<CartScreen> {
                               Text(
                                 "\Harga : Rp  ${cardData.formatHarga(cardData.items.values.toList()[index].price * cardData.items.values.toList()[index].qty)}",
                                 style: TextStyle(
+                                    fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white),
                               ),

@@ -60,14 +60,23 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
-      title: 'ECORP',
-      // logo: const AssetImage('assets/images/ecorp-lightblue.png'),
+      logo: const AssetImage('images/logobss.png'),
       onLogin: _loginUser,
       onSignup: _signupUser,
       onSubmitAnimationCompleted: () {
         Provider.of<Authen>(context, listen: false).tempData();
       },
       onRecoverPassword: _recoverPassword,
+      theme: LoginTheme(
+        logoWidth: 300,
+        primaryColor: Color.fromARGB(255, 0, 121, 101),
+        accentColor: Colors.yellowAccent,
+        errorColor: Colors.deepOrange,
+        buttonStyle: TextStyle(
+          fontWeight: FontWeight.w800,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }
