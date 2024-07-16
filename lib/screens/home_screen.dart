@@ -108,8 +108,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                Color.fromARGB(255, 238, 238, 238),
-                Color.fromARGB(255, 126, 255, 242),
+                Color.fromARGB(255, 255, 255, 255),
+                Color.fromARGB(255, 174, 255, 247),
               ])),
           child: SingleChildScrollView(
             child: Column(
@@ -126,12 +126,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: 20,
                           shadows: [
                             Shadow(
-                              color: Color.fromARGB(255, 0, 212, 177),
+                              color: Color.fromARGB(255, 0, 189, 157),
                               blurRadius: 2,
                             )
                           ],
                           fontWeight: FontWeight.w500,
-                          color: Color.fromARGB(255, 0, 212, 177),
+                          color: Color.fromARGB(255, 0, 189, 157),
                         ),
                       ),
                     ),
@@ -150,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           );
                         },
                         icon: Icon(
-                            color: Color.fromARGB(255, 0, 212, 177),
+                            color: Color.fromARGB(255, 0, 189, 157),
                             Icons.shopping_cart),
                       ),
                     ),
@@ -226,8 +226,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Container(
-                  height: 800,
+                  height: 450,
                   child: GridView.builder(
+                    scrollDirection: Axis.vertical,
                     padding: const EdgeInsets.all(25.0),
                     itemCount: shoesByBrand.length,
                     itemBuilder: (ctx, i) => GridTile(
@@ -253,7 +254,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       boxShadow: [
                                         BoxShadow(
                                           color: Color.fromARGB(
-                                              255, 252, 251, 251),
+                                              255, 255, 255, 255),
                                           blurRadius: 0.0,
                                           offset: Offset(0, 0),
                                         )

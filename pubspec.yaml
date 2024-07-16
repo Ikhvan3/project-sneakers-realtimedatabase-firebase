@@ -65,31 +65,27 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/daftar_makanan/gado-gado.png
-    - images/daftar_makanan/ketoprak.png
-    - images/daftar_makanan/nasi-goreng-kambing.png
-    - images/daftar_makanan/sate.png
-    - images/daftar_makanan/soto-betawi.png
-    - images/daftar_minuman/jeruk/baground_jeruk.png
-    - images/daftar_minuman/jeruk/es_jeruk.jpg
-    - images/daftar_minuman/jeruk/jeruk_hangat.jpg
-    - images/daftar_minuman/kopi/caffe_latte.jpg
-    - images/daftar_minuman/kopi/capuccino.png
-    - images/daftar_minuman/kopi/esppreso.jpg
-    - images/daftar_minuman/kopi/latte.jpg
-    - images/daftar_minuman/teh/teh.jpg
-    - images/daftar_minuman/teh/es_teh.jpg
-    - images/daftar_minuman/teh/teh_hangat.jpg
-    - images/daftar_makanan/gado_gado1.jpg
-    - images/daftar_minuman/kopi/jeruk1.jpg
-    - images/daftar_minuman/kopi/images.jpg
-    - images/daftar_minuman/kopi/teh.jpg
     - images/bg_s.png
     - images/bg_sneakers.jpg
-    - images/converse_chuck70_high.png
-    - images/vans_old_skool.png
-    - images/vans_yacht_club.png
     - images/logobss.png
+    - images/converse/Chuck_Taylor_All_Star.png
+    - images/converse/Converse_Belmont.png
+    - images/converse/converse_chuck70_high.png
+    - images/converse/Pro_Blaze_Classic.png
+    - images/converse/Run_Star_Trainer.png
+    - images/converse/Star_Player_76.png
+    - images/nike/Air_Jordan_1_Elevate_Low.png
+    - images/nike/Air_Jordan_1_Mid_SE.png
+    - images/nike/Nike_Air_Force_1_Shadow.png
+    - images/nike/Nike_Air_Max_90_LV8.png
+    - images/nike/Nike_Cortez_Textile.png
+    - images/nike/Nike_Tech_Hera.png
+    - images/vans/Authentic_Canvas_Shoe.png
+    - images/vans/Knu_Skool_DR_Shoe.png
+    - images/vans/Knu_Skool_Mesh_Shoe.png
+    - images/vans/Knu_Stack_Shoe.png
+    - images/vans/Sk8-Hi_Pig_Suede_Shoe.png
+    - images/vans/Youth_Sk8-Hi_Shoe.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
