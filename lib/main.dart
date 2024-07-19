@@ -24,6 +24,9 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
+          create: (context) => ShoeProvider(),
+        ),
+        ChangeNotifierProvider(
           create: (context) => Authen(),
         ),
         ChangeNotifierProvider(
@@ -31,9 +34,6 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => DaftarMinumans(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => ShoeProvider(),
         ),
         ChangeNotifierProxyProvider<Authen, Cart>(
           create: (context) => Cart(),
