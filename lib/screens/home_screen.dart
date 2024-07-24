@@ -11,6 +11,7 @@ import '../models/brandhome_item.dart';
 import '../providers/cart.dart';
 import '../widgets/badge.dart';
 import 'cart_screen.dart';
+import 'sneakers_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/home_screen';
@@ -272,10 +273,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.all(25.0),
                         itemCount: shoesByBrand.length,
                         itemBuilder: (ctx, i) => GridTile(
-                          child: InkWell(
+                          child: Stack(children: [
+                            InkWell(
                               onTap: () {
                                 Navigator.of(context).pushNamed(
-                                  ProductsOverviewScreen.routeName,
+                                  DetailScreenSneakers.routeName,
+                                  arguments: shoesByBrand[i].id,
                                 );
                               },
                               child: Card(
@@ -300,29 +303,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                               offset: Offset(0, 0),
                                             )
                                           ]),
-                                      child: Stack(
-                                          alignment: Alignment.center,
-                                          children: [
-                                            IconButton(
-                                              icon: Icon(
-                                                shoesByBrand[i].isFavorite
-                                                    ? Icons.favorite
-                                                    : Icons
-                                                        .favorite_border_outlined,
-                                                color: Color.fromARGB(
-                                                    255, 0, 0, 0),
-                                              ),
-                                              onPressed: () {
-                                                shoeProvider.toggleFavorite(
-                                                    shoesByBrand[i].id);
-                                              },
-                                            ),
-                                            Positioned(
-                                              child: Image.asset(
-                                                shoesByBrand[i].imageAsset,
-                                              ),
-                                            ),
-                                          ]),
+                                      child: Positioned(
+                                        child: Image.asset(
+                                          shoesByBrand[i].imageAsset,
+                                        ),
+                                      ),
                                     ),
                                     SizedBox(
                                       height: 5,
@@ -387,7 +372,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   ],
                                 ),
-                              )),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 120, top: 5),
+                              child: IconButton(
+                                icon: Icon(
+                                  size: 33,
+                                  shoesByBrand[i].isFavorite
+                                      ? Icons.favorite
+                                      : Icons.favorite_border_outlined,
+                                  color: Color.fromARGB(255, 0, 167, 139),
+                                ),
+                                onPressed: () {
+                                  shoeProvider
+                                      .toggleFavorite(shoesByBrand[i].id);
+                                },
+                              ),
+                            ),
+                          ]),
                           //
                         ),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

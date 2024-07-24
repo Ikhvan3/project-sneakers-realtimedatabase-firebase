@@ -10,6 +10,7 @@ import 'package:menu_makanan/screens/home_screen.dart';
 import 'package:menu_makanan/screens/makanan_screen/makanan_overview_screen.dart';
 import 'package:menu_makanan/screens/minuman_screen/minuman_detail_screen.dart';
 import 'package:menu_makanan/screens/minuman_screen/minuman_overview_screen.dart';
+import 'package:menu_makanan/screens/sneakers_detail_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'screens/makanan_screen/makanan_detail_screen.dart';
@@ -72,6 +73,7 @@ class MyApp extends StatelessWidget {
             ProductsOverviewScreen.routeName: (ctx) => ProductsOverviewScreen(),
             MinumanOverviewScreen.routeName: (ctx) => MinumanOverviewScreen(),
             HomeScreen.routeName: (ctx) => HomeScreen(),
+            DetailScreenSneakers.routeName: (ctx) => DetailScreenSneakers(),
           },
         ),
       ),
