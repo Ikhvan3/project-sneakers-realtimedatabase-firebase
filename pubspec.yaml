@@ -98,15 +98,24 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Lato
-  #     fonts:
-  #       - asset: assets/fonts/Lato-Regular.ttf
-  #       - asset: assets/fonts/Lato-Bold.ttf
-  #         weight: 700
-  #   - family: Anton
-  #     fonts:
-  #       - asset: assets/fonts/Anton-Regular.ttf
+  fonts:
+    - family: Oswald
+      fonts:
+        - asset: assets/fonts/Oswald-Regular.ttf
+        - asset: assets/fonts/Oswald-Light.ttf
+
+        - asset: assets/fonts/Oswald-Medium.ttf
+        - asset: assets/fonts/Oswald-SemiBold.ttf
+
+    #       - asset: assets/fonts/Lato-Bold.ttf
+    #         weight: 700
+    - family: Oxygen
+      fonts:
+        # - asset: assets/fonts/Oxygen-Regular.ttf
+        - asset: assets/fonts/Oxygen-Light.ttf
+    - family: Staatliches
+      fonts:
+        - asset: assets/fonts/Staatliches-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

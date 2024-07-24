@@ -49,7 +49,6 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.indigo,
             hintColor: Color.fromARGB(255, 255, 255, 255),
-            fontFamily: 'Lato',
           ),
           home: auth.isAuthe
               ? HomeScreen()
