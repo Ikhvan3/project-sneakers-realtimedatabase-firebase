@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:menu_makanan/providers/auth.dart';
 import 'package:menu_makanan/providers/brandhome.dart';
+import 'package:menu_makanan/providers/favorite.dart';
 import 'package:menu_makanan/providers/makanan/all_products.dart';
 import 'package:menu_makanan/providers/cart.dart';
 import 'package:menu_makanan/providers/minuman/daftar_minuman.dart';
 import 'package:menu_makanan/screens/auth_page.dart';
 import 'package:menu_makanan/screens/cart_screen.dart';
+import 'package:menu_makanan/screens/favoritescreen.dart';
 import 'package:menu_makanan/screens/home_screen.dart';
 import 'package:menu_makanan/screens/makanan_screen/makanan_overview_screen.dart';
 import 'package:menu_makanan/screens/minuman_screen/minuman_detail_screen.dart';
@@ -25,10 +27,15 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => ShoeProvider(),
+          create: (context) => Authen(),
+        ),
+        ChangeNotifierProxyProvider<Authen, Favorite>(
+          create: (context) => Favorite(),
+          update: (context, auth, previous) =>
+              previous!..updateAuthData(auth.token, auth.userId),
         ),
         ChangeNotifierProvider(
-          create: (context) => Authen(),
+          create: (context) => ShoeProvider(),
         ),
         ChangeNotifierProvider(
           create: (context) => DaftarMakanans(),
@@ -73,6 +80,7 @@ class MyApp extends StatelessWidget {
             MinumanOverviewScreen.routeName: (ctx) => MinumanOverviewScreen(),
             HomeScreen.routeName: (ctx) => HomeScreen(),
             DetailScreenSneakers.routeName: (ctx) => DetailScreenSneakers(),
+            FavoriteScreen.routeName: (ctx) => FavoriteScreen(),
           },
         ),
       ),

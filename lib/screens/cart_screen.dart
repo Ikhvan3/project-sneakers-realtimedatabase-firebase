@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:menu_makanan/providers/minuman/daftar_minuman.dart';
-
 import 'package:provider/provider.dart';
-
 import '../providers/cart.dart';
-import '../providers/makanan/all_products.dart';
 
 class CartScreen extends StatefulWidget {
   static const routeName = '/cart';

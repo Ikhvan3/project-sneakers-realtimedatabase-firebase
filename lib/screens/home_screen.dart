@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:menu_makanan/providers/auth.dart';
 import 'package:menu_makanan/providers/brandhome.dart';
+import 'package:menu_makanan/providers/favorite.dart';
+import 'package:menu_makanan/screens/favoritescreen.dart';
 import 'package:provider/provider.dart';
 import '../models/brandhome_item.dart';
 import '../providers/cart.dart';
@@ -79,7 +81,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   icon: Icon(Icons.favorite_border),
                   color: Color.fromARGB(255, 255, 255, 255),
                   iconSize: 30,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(
+                      FavoriteScreen.routeName,
+                    );
+                  },
                 ),
                 IconButton(
                   onPressed: () =>
@@ -382,8 +388,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                   color: Color.fromARGB(255, 0, 167, 139),
                                 ),
                                 onPressed: () {
-                                  shoeProvider
-                                      .toggleFavorite(shoesByBrand[i].id);
+                                  final favorite = Provider.of<Favorite>(
+                                      context,
+                                      listen: false);
+                                  if (favorite.isInitialized) {
+                                    favorite.addFavorite(
+                                      shoesByBrand[i].id.toString(),
+                                      shoesByBrand[i].name.toString(),
+                                      shoesByBrand[i].price,
+                                      shoesByBrand[i].imageAsset,
+                                    );
+                                  } else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                          content: Text(
+                                              'Please log in to add favorites')),
+                                    );
+                                  }
                                 },
                               ),
                             ),
