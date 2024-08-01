@@ -379,33 +379,34 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 120, top: 5),
-                              child: IconButton(
-                                icon: Icon(
-                                  size: 33,
-                                  shoesByBrand[i].isFavorite
-                                      ? Icons.favorite
-                                      : Icons.favorite_border_outlined,
-                                  color: Color.fromARGB(255, 0, 167, 139),
+                              child: Consumer<Favorite>(
+                                builder: (ctx, favorite, _) => IconButton(
+                                  icon: Icon(
+                                    size: 33,
+                                    favorite.favorites.containsKey(
+                                            shoesByBrand[i].id.toString())
+                                        ? Icons.favorite
+                                        : Icons.favorite_border_outlined,
+                                    color: Color.fromARGB(255, 0, 167, 139),
+                                  ),
+                                  onPressed: () {
+                                    if (favorite.isInitialized) {
+                                      favorite.addFavorite(
+                                        shoesByBrand[i].id.toString(),
+                                        shoesByBrand[i].name.toString(),
+                                        shoesByBrand[i].price,
+                                        shoesByBrand[i].imageAsset,
+                                      );
+                                    } else {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                            content: Text(
+                                                'Please log in to add favorites')),
+                                      );
+                                    }
+                                  },
                                 ),
-                                onPressed: () {
-                                  final favorite = Provider.of<Favorite>(
-                                      context,
-                                      listen: false);
-                                  if (favorite.isInitialized) {
-                                    favorite.addFavorite(
-                                      shoesByBrand[i].id.toString(),
-                                      shoesByBrand[i].name.toString(),
-                                      shoesByBrand[i].price,
-                                      shoesByBrand[i].imageAsset,
-                                    );
-                                  } else {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                          content: Text(
-                                              'Please log in to add favorites')),
-                                    );
-                                  }
-                                },
                               ),
                             ),
                           ]),
