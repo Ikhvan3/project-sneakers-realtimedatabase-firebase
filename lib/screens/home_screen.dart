@@ -5,6 +5,7 @@ import 'package:menu_makanan/providers/auth.dart';
 import 'package:menu_makanan/providers/brandhome.dart';
 import 'package:menu_makanan/providers/favorite.dart';
 import 'package:menu_makanan/screens/favoritescreen.dart';
+import 'package:menu_makanan/screens/search_screen.dart';
 import 'package:provider/provider.dart';
 import '../models/brandhome_item.dart';
 import '../providers/cart.dart';
@@ -58,23 +59,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
 
-                Consumer<Cart>(
-                  builder: (context, value, ch) {
-                    return BadgeW(
-                      child: ch!,
-                      value: value.jumlah.toString(),
+                IconButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(
+                      SearchScreen.routeName,
                     );
                   },
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed(
-                        CartScreen.routeName,
-                      );
-                    },
-                    icon: Icon(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        Icons.shopping_cart),
-                  ),
+                  icon: Icon(
+                      size: 30,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      Icons.search_outlined),
                 ),
 
                 IconButton(

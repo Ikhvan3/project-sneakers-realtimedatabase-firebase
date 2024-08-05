@@ -12,6 +12,7 @@ import 'package:menu_makanan/screens/home_screen.dart';
 import 'package:menu_makanan/screens/makanan_screen/makanan_overview_screen.dart';
 import 'package:menu_makanan/screens/minuman_screen/minuman_detail_screen.dart';
 import 'package:menu_makanan/screens/minuman_screen/minuman_overview_screen.dart';
+import 'package:menu_makanan/screens/search_screen.dart';
 import 'package:menu_makanan/screens/sneakers_detail_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -81,6 +82,7 @@ class MyApp extends StatelessWidget {
             HomeScreen.routeName: (ctx) => HomeScreen(),
             DetailScreenSneakers.routeName: (ctx) => DetailScreenSneakers(),
             FavoriteScreen.routeName: (ctx) => FavoriteScreen(),
+            SearchScreen.routeName: (ctx) => SearchScreen(),
           },
         ),
       ),
