@@ -51,7 +51,11 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(
+                      HomeScreen.routeName,
+                    );
+                  },
                   icon: Icon(
                     Icons.home_outlined,
                     color: Color.fromARGB(255, 251, 249, 249),
